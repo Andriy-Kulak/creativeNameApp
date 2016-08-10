@@ -4,5 +4,5 @@
 a look at existing ones and be able to export them into excel. Admins can change monitor these information submitted as well as
 the available options (using admin dashboard)
 that creative creative agencies have when creating a new name.</p>
-<p>Most of the front-end Angular/Typescript code is within wwwroot/scripts/creative folder</p>
+<p>Most of the front-end Angular/Typescript code is within <a href="https://github.com/Andriy-Kulak/creativeNameApp/tree/master/src/CreativeNamingConvention/wwwroot/scripts/modules/creative">this folder</a></p>
 <p>The rest of the C# code is within the root Folders(Controllers, Data, Models, Views, etc.)</p>
