@@ -1,0 +1,81 @@
+﻿select.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+select.ng-dirty.ng-valid {
+    border: 1px solid blue;
+}
+
+.white-text {
+    color: white;
+}
+
+ .hidden{
+   visibility:hidden;
+   display: block!important;
+ }
+
+ .creative-name-box {
+     margin-top: 5px;
+     height: 130px !important;
+     background-color: #dcffcc;
+     border-radius: 4px;     
+ }
+
+
+
+[ng-click] {
+    cursor: pointer;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 450px;    
+}
+
+.th-creative-message {
+     width: 100px;
+     overflow: hidden !important;
+}
+
+.th-campaign-name {
+     width: 100px;
+     overflow: hidden !important;
+}
+
+.th-text {
+    width: 280px;
+    overflow: hidden !important;
+}
+
+.th-date-created {
+     width: 70px;
+     overflow: hidden !important;
+}
+
+.creativeGrid {
+
+    height: 500px;
+  }
+
+.wrap {
+  white-space: normal;
+}
+
+.ui-grid-header-cell .ui-grid-cell-contents {
+     height: 40px !important;
+     white-space: normal;
+     overflow: visible;
+     font-size: 11px;
+
+
+}
+.creativeListFont{
+    font-size: 11px;
+}
+
+.clearLobSearch {
+    position: absolute !important;
+    right:    0 !important;
+    bottom:   0 !important;
+}

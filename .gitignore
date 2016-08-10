@@ -1,0 +1,7 @@
+artifacts/
+src/CreativeNamingConvention/node_modules/
+src/CreativeNamingConvention/bin/
+src/CreativeNamingConvention/wwwroot/lib
+.vs/
+src/CreativeNamingConvention/CreativeNamingConvention.xproj
+src/CreativeNamingConvention/CreativeNamingConvention.xproj.user

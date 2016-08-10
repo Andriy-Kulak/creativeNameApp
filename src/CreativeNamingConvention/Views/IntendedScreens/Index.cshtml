@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CreativeNamingConvention.Models.Domain.IntendedScreens>
+
+@{
+    ViewBag.Title = "Intended Screens";
+}
+
+<div class="container creative-containter-top">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading panel-height text-center">
+                    <h3><b> Available Otions: @ViewBag.Title</b></h3>
+                </div>
+                <table class="table table-bordered table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Name)</th>
+                            <th>@Html.DisplayNameFor(model => model.Code)</th>
+                            <th>@Html.DisplayNameFor(model => model.Disabled)</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Code)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Disabled)</td>
+                                <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="panel-footer">
+                    @Html.ActionLink("Create New", "Create", null, null, new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

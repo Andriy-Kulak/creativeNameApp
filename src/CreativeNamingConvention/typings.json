@@ -1,0 +1,15 @@
+{
+  "name": "ASP.NET",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160315005437",
+    "angular-mocks": "registry:dt/angular-mocks#1.3.0+20160215162030",
+    "angular-resource": "registry:dt/angular-resource#1.5.0+20160310132645",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160112161118",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160308082659",
+    "jquery": "registry:dt/jquery#1.10.0+20160303223636",
+    "karma-jasmine": "registry:dt/karma-jasmine#0.0.0+20150625071724",
+    "require": "registry:dt/require#2.1.20+20160215162030"
+  }
+}

@@ -1,0 +1,22 @@
+﻿{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "amd"
+  },
+  "path": {
+    "main": "/scripts"
+  },
+  "rootDirs": [
+    "./wwwroot/scripts/"
+  ],
+  "exclude": [
+    "wwwroot/lib",
+    "node_modules",
+    "typings/browser.d.ts",
+    "typings/browser"
+  ],
+  "compileOnSave": true
+}

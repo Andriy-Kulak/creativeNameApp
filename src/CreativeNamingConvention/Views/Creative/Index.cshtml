@@ -1,0 +1,10 @@
+﻿@section Scripts{
+    <script type="text/javascript">
+        require(['creative.module'], function () {
+            angular.bootstrap(document, ['creative.module']);
+            $('body').addClass('ng-app: creative.module');
+        });
+    </script>
+}
+
+<ui-view ng-cloak></ui-view>

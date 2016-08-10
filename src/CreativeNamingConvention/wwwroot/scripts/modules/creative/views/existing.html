@@ -1,0 +1,35 @@
+﻿<!-- style elements specific to creative page-->
+<link href="../../../../css/creative.style.css" rel="stylesheet" />
+
+<div class="container-fluid creative-containter-top panel-group">
+    <div class="panel panel-primary">
+        <div class="panel-height panel-heading">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center">Existing Creative Names</h4>
+                </div>
+            </div>
+        </div>
+        <!-- UI-grid Chart-->        
+        <div class="panel-body">
+            <div class="row">
+                
+                <div class="col-sm-2 form-group-sm">
+                    <label>Search by LOB</label>
+                    <select ng-options="o as o for o in vm.lobOption | unique" ng-model="vm.searchLob" class="form-control" ng-change="vm.refreshData()">Select...</select>
+                </div>
+                <div class="col-sm-2">
+                    <br />
+                    <button class="btn btn-info" type="button" ng-click="vm.clearData()">Clear LOB Search</button>
+                </div>
+            </div>
+            <br />
+            <div ui-grid="vm.creativeDataChart" ui-grid-pagination class="creativeGrid" ui-grid-exporter></div>
+        </div>     
+    </div>
+</div>
+
+
+
+
+

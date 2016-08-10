@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using System.Security.Principal
+@using Microsoft.AspNet.Identity
+@using CreativeNamingConvention.Data.Services;
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <h4><b>Home Page: Directions for Creative Naming App will be here</b></h4>
+    <p>1. Hello @User.Identity.Name!</p>
+    
+    @*<p>Hi @{
+        var service = new LdapAuthService(Context.User.Identity.Name);
+    } @service.FirstName()!</p>*@
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

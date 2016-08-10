@@ -1,0 +1,28 @@
+﻿.vertical-offset-50{
+    padding-top:50px;
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+/* Forms */
+.ng-invalid.ng-dirty {
+  border-color: red;
+  outline-color: red;
+}
+
+.ng-valid.ng-dirty {
+  border-color: green;
+  outline-color: green;
+}
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }

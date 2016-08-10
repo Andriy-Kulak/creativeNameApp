@@ -1,0 +1,363 @@
+﻿<!-- style elements specific to creative page-->
+<link href="../../../../css/creative.style.css" rel="stylesheet" />
+
+<div class="container-fluid creative-containter-top" id="top">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10 creative-name-form panel-group">
+            <div class="panel panel-primary">
+
+                <!--Title-->
+                <div class="panel-height panel-heading">
+                    <h4 class="text-center">Creative Naming Convention Form</h4>
+                </div>
+
+                <form class="panel-body" name="vm.nameConvForm" role="form" ng-submit="vm.addNameConv()"  novalidate>
+
+                    <!-- Input Row 1 -->
+                    <div class="row">
+
+                        <!-- LOB field-->
+                        <div class="col-sm-4 form-group-sm">
+                            <label for="lob">LOB:</label>
+
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoLob()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="lob"
+                                    id="lob"
+                                    ng-model="vm.model.lob"
+                                    ng-options="o as o.name for o in vm.options.lobs | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.lob.$touched) && vm.nameConvForm.lob.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Product field-->
+                        <div class="col-sm-4 form-group-sm">
+                            <label>Product:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoProduct()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    ng-model="vm.model.product"
+                                    name="product"
+                                    id="product"
+                                    ng-options="o as o.name for o in vm.model.lob.products | filter: {'disabled': false}"
+                                    ng-disabled="!vm.model.lob"
+                                    required></select>
+
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.product.$touched) && vm.nameConvForm.product.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Creative Category field-->
+                        <div class="col-sm-4 form-group-sm">
+                            <label>Creative Category:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeCategory()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="creativeCategory"
+                                    ng-model="vm.model.creativeCategories"
+                                    ng-options="o as o.name for o in vm.model.product.creativeCategories  | filter: {'disabled': false}"
+                                    ng-disabled="!vm.model.product"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.creativeCategory.$touched) && vm.nameConvForm.creativeCategory.$error.required)}">*Required</span>
+                        </div>
+                    </div>
+
+                    <!-- Input Row 2 -->
+                    <div class="row">
+                        <!-- Media Type field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="mediaType">Media Type:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoMediaType()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="mediaType"
+                                    id="mediaType"
+                                    ng-model="vm.model.mediaType"
+                                    ng-options="o as o.name for o in vm.options.mediaTypes  | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.mediaType.$touched) && vm.nameConvForm.mediaType.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Intended Screen field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="intendedScreen">Intended Screen:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoIntendedScreen()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="intendedScreen"
+                                    id="intendedScreen"
+                                    ng-model="vm.model.intendedScreen"
+                                    ng-options="o as o.name for o in vm.options.intendedScreens  | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.intendedScreen.$touched) && vm.nameConvForm.intendedScreen.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Creative Type field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="creativeType">Creative Type:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeType()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="creativeType"
+                                    id="creativeType"
+                                    ng-model="vm.model.creativeType"
+                                    ng-options="o as o.name for o in vm.options.creativeTypes | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.creativeType.$touched) && vm.nameConvForm.creativeType.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Creative Message field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="creativeMessage">Creative Message:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeMessage()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <textarea class="form-control"
+                                      name="creativeMessage"
+                                      id="creativeMessage"
+                                      rows="1"
+                                      ng-model="vm.model.creativeMessage"
+                                      placeholder="13 Charaters Maximum!"
+                                      ng-trim="false"
+                                      maxlength="13"
+                                      ng-pattern="/^[a-zA-Z0-9\ ]*$/"></textarea>
+                            <span ng-class="{'hidden': !vm.nameConvForm.creativeMessage.$touched}">{{13 - vm.model.creativeMessage.length}} characters left! </span>
+                        </div>                      
+                    </div>
+
+                    <!-- Input Row 3 -->
+                    <div class="row">
+
+                        <!-- Size Height field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label>Size Height:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoSizeHeight()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <input class="form-control"
+                                    name="sizeHeight"
+                                    id="sizeHeighth"
+                                    ng-model="vm.model.sizeHeight"
+                                    maxlength="4"
+                                    ng-pattern="/^[1-9][0-9]*$/"
+                                    required />
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.sizeHeight.$touched) && vm.nameConvForm.sizeHeight.$error.required)}">*Required</span>                           
+                        </div>
+
+                        <!-- Size Width field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label>Size Width:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoSizeWidth()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <input class="form-control"
+                                    name="sizeWidth"
+                                    id="sizeWidth"
+                                    ng-model="vm.model.sizeWidth"
+                                    ng-pattern="/^[1-9][0-9]*$/"
+                                    maxlength="4"                                                                      
+                                    required />
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.sizeWidth.$touched) && vm.nameConvForm.sizeWidth.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Video Length field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label>Video Length:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoVideoLength()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="videoLength"
+                                    id="videoLength"
+                                    ng-model="vm.model.videoLength"
+                                    ng-options="o as o.name for o in vm.options.videoLengths | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.videoLength.$touched) && vm.nameConvForm.videoLength.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- A/B Test Label field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label>A/B Test Label:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoAbTestLabel()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="abTestLabel"
+                                    id="abTestLabel"
+                                    ng-model="vm.model.abTestLabel"
+                                    ng-options="o as o.name for o in vm.options.abTestLabels  | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.abTestLabel.$touched) && vm.nameConvForm.abTestLabel.$error.required)}">*Required</span>
+                        </div>
+                    </div>
+
+                    <!-- Input Row 4 -->
+                    <div class="row">
+
+                        <!-- Creative Version field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="creativeVersion">Creative Version:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeVersion()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="creativeVersion"
+                                    id="creativeVersion"
+                                    ng-model="vm.model.creativeVersion"
+                                    required>
+                                <option ng-repeat="i in [1,2,3,4,5,6,7,8,9]" value="{{$index+1}}">{{$index+1}}</option>
+                            </select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.creativeVersion.$touched) && vm.nameConvForm.creativeVersion.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Creative Ops field-->
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="creativeOps">Creative Ops:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeOps()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <select class="form-control"
+                                    name="creativeOps"
+                                    id="creativeOps"
+                                    ng-model="vm.model.creativeOps"
+                                    ng-options="o as o.name for o in vm.options.creativeOps | filter: {'disabled': false}"
+                                    required></select>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.creativeOps.$touched) && vm.nameConvForm.creativeOps.$error.required)}">*Required</span>
+                        </div>
+
+                        <!-- Error messages -->
+                        <div class="col-sm-6 form-group-sm">
+                            <span class="label-danger white-text"
+                                  ng-show="((vm.nameConvForm.$submitted || vm.nameConvForm.creativeMessage.$touched) &&
+                                  vm.nameConvForm.creativeMessage.$error.pattern)"><b>*Creative Message</b> can have Alphanumeric charecters only<br /></span>
+                            <span class="label-danger white-text"
+                                  ng-show="((vm.nameConvForm.$submitted || vm.nameConvForm.sizeHeight.$touched) &&
+                                  vm.nameConvForm.sizeHeight.$error.pattern)"><b>*Size Height</b> has to be a number that cannot start with zero digit<br /></span>
+                            <span class="label-danger white-text"
+                                  ng-show="((vm.nameConvForm.$submitted || vm.nameConvForm.sizeWidth.$touched) &&
+                            vm.nameConvForm.sizeWidth.$error.pattern)"><b>*Size Width</b> has to be a number that cannot start with zero digit<br /></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">  
+                            <p class="bg-info">
+                                The 13 fields above are used to generate the creative naming.
+                                Below please enter the TRUE creative campaign name and creative message name associated to the creative submitted above in the 2 fields below.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="campaignName">Campaign Name:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCampaignName()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <textarea class="form-control"
+                                      rows="1"
+                                      name="campaignName"
+                                      id="campaignName"
+                                      ng-model="vm.model.campaignName"
+                                      maxlength="100"
+                                      required></textarea>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.campaignName.$touched) && vm.nameConvForm.campaignName.$error.required)}">*Required</span>
+                        </div>
+
+                        <div class="col-sm-3 form-group-sm">
+                            <label for="campaignName">Creative Message Name:</label>
+                            <img class="pull-right" ng-click="vm.InfoModalService.infoCreativeMessageName()"
+                                 src="../../../../images/SupportImageSmall.png" />
+                            <textarea class="form-control"
+                                      rows="1"
+                                      name="creativeMessageName"
+                                      id="creativeMessageName"
+                                      ng-model="vm.model.creativeMessageName"
+                                      maxlength="100"
+                                      required></textarea>
+                            <!-- show error if field is incorrect -->
+                            <span class="label-danger white-text"
+                                  ng-class="{'hidden': !((vm.nameConvForm.$submitted || vm.nameConvForm.creativeMessageName.$touched) && vm.nameConvForm.creativeMessageName.$error.required)}">*Required</span>
+                        </div>
+
+
+                        <div class="col-sm-offset-2 col-sm-2 form-group-sm">
+                                <br />                           
+                                <button class="btn btn-danger" ng-click="vm.clearAllValues()" type="button">Clear All</button>
+                        </div>
+                            <div class="col-sm-2">
+                                <br />
+                                <fieldset ng-disabled="isTimingOut">
+                                    <button class="btn btn-primary pull-right" ng-disabled="vm.buttonDisabled" type="submit">Submit</button>
+                                </fieldset>
+                            </div>
+                            <div ng-class="{'hidden': !(vm.nameConvForm.$submitted && !vm.nameConvForm.$valid)}" class="pull-right">
+                                <span class="label-danger white-text">*Some of the fields are incorrect.</span>
+                            </div>
+                        
+                    </div>
+                    <!-- Input Row 6 -->
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+        
+            
+        <div class="col-md-offset-2 col-md-8 panel-group" ng-show="vm.postSuccess" id="successCreativeTag">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading panel-height">
+                            <h4 class="text-center">Your New Creative Name! </h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <h4 class="text-center">{{vm.model.text}}</h4>                                  
+                                    <button role="button" class="btn btn-info btn-sm center-block" onclick="location.href='creative#top'">
+                                        <b>Click Here</b> to Go Back to top of form to Create a New Name with <b>existing information!</b>
+                                    </button>
+                                </div>
+
+                                <div class="col-lg-2 pull-right">
+                                    <button class="btn btn-primary" clipboard text="vm.model.text">Copy</button>                             
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+
+<!--Modal that is triggered-->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'limit':1, 'close-button': true}"></toaster-container>
